@@ -1,4 +1,4 @@
-let cadena = 'kayay';
+let cadena = 'kayay radar arenera somos reconocer';
 
 function invertir(begin, end, cadena) {
 
@@ -6,9 +6,11 @@ function invertir(begin, end, cadena) {
         return cadena;
     }
 
-    let cache = cadena[begin];
-    cadena[end] = cache;
-    cadena[begin] = cadena[end];
+    let caracteres = cadena.split('');
+    let cache = caracteres[end];
+    caracteres[end] = caracteres[begin];
+    caracteres[begin] = cache;
+    cadena = caracteres.join("");
 
     cadena = invertir(++begin, --end, cadena);
 
@@ -18,3 +20,4 @@ function invertir(begin, end, cadena) {
 
 let cadenaInvertida = invertir(0, cadena.length - 1, cadena);
 console.log(cadenaInvertida);
+
