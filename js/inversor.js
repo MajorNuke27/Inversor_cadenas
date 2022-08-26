@@ -2,7 +2,7 @@ let cadena = 'kayay radar arenera somos reconocer';
 
 function invertir(begin, end, cadena) {
 
-    if (begin == end || begin > end) {
+    if (begin >= end) {
         return cadena;
     }
 
@@ -10,9 +10,8 @@ function invertir(begin, end, cadena) {
     let cache = caracteres[end];
     caracteres[end] = caracteres[begin];
     caracteres[begin] = cache;
-    cadena = caracteres.join("");
 
-    cadena = invertir(++begin, --end, cadena);
+    cadena = invertir(++begin, --end, caracteres.join(""));
 
     return cadena;
 }
